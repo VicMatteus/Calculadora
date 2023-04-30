@@ -48,15 +48,7 @@ export default function Botao({titulo})
         {
             value ==='x' ? value='*' : null
             value ==='÷' ? value='/' : null
-            // if(value === 'x')
-            // {
-            //      value='*'
-            //      console.log(value)
-            // }
-            // else
-            // {
-            //     null
-            // }
+
             setOperacao(value)
             updateResult(numero+value+numero2)
         }
@@ -64,7 +56,22 @@ export default function Botao({titulo})
         else if(value==='=')
         {
 
-            numero2!=0 ? updateResult(eval(result)) : Alert.alert("Não se pode dividir por zero.")
+            if (numero2!=0 )
+            {
+                let resultado = eval(result)
+                 updateResult(resultado)
+                 setNumero(resultado)
+                 setNumero2("")
+                 setOperacao("")
+            }
+            else
+            {
+                Alert.alert("Não se pode dividir por zero.")
+                updateResult("")
+                setNumero("")
+                setNumero2("")
+                setOperacao("")
+            }
         }
         else if(operacao !== "")
         {
@@ -78,6 +85,7 @@ export default function Botao({titulo})
             updateResult(result+value+operacao+numero2)
         }
         console.log(value)
+        
         //Na minha cabeça, só isso deveria dar conta, mas o estado não atualiza na mesma hora
         //e também, parece que cada botão tem um estado, desse jeito.
         // updateResult(result+operacao+numero2)

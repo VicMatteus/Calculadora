@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
       flex: 1, 
       height:"100%",   
       flexDirection:'row',
-      backgroundColor: 'red',
+      backgroundColor: '#080808',
       justifyContent: 'flex-end',
       alignItems: 'space-between',
       width: "100%",
@@ -30,6 +30,6 @@ const styles = StyleSheet.create({
         fontSize: 50,
         color: 'white',
         textAlign: 'left',
-        backgroundColor:"black",
+        backgroundColor:"#080808",
     },
 })
