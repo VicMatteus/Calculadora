@@ -9,13 +9,16 @@ export const MyContext = createContext();
 //updateResult. Por isso definimos ele como o pai de quem quer que queiramos que tenha acesos ao estado
 const MyContextProvider = ({ children }) => {
     const [result, setResult] = useState('');
-  
+    const [numero, setNumero]     = useState('')
+    const [numero2, setNumero2]   = useState('')
+    const [operacao, setOperacao] = useState('')
+
     const updateResult = (value) => {
       setResult(value);
     };
   
     return (
-      <MyContext.Provider value={{ result, updateResult }}>
+      <MyContext.Provider value={{ result, updateResult, numero, setNumero, numero2, setNumero2, operacao, setOperacao }}>
         {children}
       </MyContext.Provider>
     );

@@ -3,6 +3,8 @@ import Linha from './src/components/Linha';
 import Resultado from './src/components/Resultado';
 import MyContextProvider from './src/components/MyContext';
 
+print("hello world")
+
 export default function App() {
     return (
         <MyContextProvider>
@@ -11,7 +13,7 @@ export default function App() {
                     <Resultado />
                 </View>
                 <View style={styles.teclado}>
-                    <Linha cols={['C'  , '()',  '%',  '/']} />
+                    <Linha cols={['C'  , '()',  '%',  '÷']} />
                     <Linha cols={['7'  , '8' ,  '9',  'x']} />
                     <Linha cols={['4'  , '5' ,  '6',  '-']} />
                     <Linha cols={['1'  , '2' ,  '3',  '+']} />
@@ -30,14 +32,14 @@ const styles = StyleSheet.create({
     width: "100%",
   },
   resultado: {
-    flex:1,
+    flex:2,
     backgroundColor:"purple",
     justifyContent: 'center',
     alignItems: 'center',
     width:"100%",
   },
   teclado: {
-    flex: 2,
+    flex: 3,
     backgroundColor:"white",
     width:"100%",
     height:"100%",
