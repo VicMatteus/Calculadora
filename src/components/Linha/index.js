@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
     linha: {
       flex: 1,
       flexDirection: 'row',
-      backgroundColor: 'blue',
       width:"100%",
+      height:"100%",
     },
   });

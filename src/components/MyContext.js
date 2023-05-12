@@ -8,7 +8,8 @@ export const MyContext = createContext();
 //O que ele está definindo abaixo é que todos os componentes filhos dele, poderão acessar uma função chamada
 //updateResult. Por isso definimos ele como o pai de quem quer que queiramos que tenha acesos ao estado
 const MyContextProvider = ({ children }) => {
-    const [result, setResult] = useState('');
+    const [result, setResult]     = useState('')
+    const [calculo, setCalculo]   = useState('')
     const [numero, setNumero]     = useState('')
     const [numero2, setNumero2]   = useState('')
     const [operacao, setOperacao] = useState('')
@@ -16,9 +17,13 @@ const MyContextProvider = ({ children }) => {
     const updateResult = (value) => {
       setResult(value);
     };
-  
+
+    const updateCalculo = (value) => {
+      setCalculo(value);
+    };
+
     return (
-      <MyContext.Provider value={{ result, updateResult, numero, setNumero, numero2, setNumero2, operacao, setOperacao }}>
+      <MyContext.Provider value={{ result, updateResult, calculo, updateCalculo, numero, setNumero, numero2, setNumero2, operacao, setOperacao }}>
         {children}
       </MyContext.Provider>
     );
